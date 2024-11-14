@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <!------------------- contact-be whats app ------------------->     
+  <div class="contact-be">
+    <div class="whatsapp">
+      <a href="https://api.whatsapp.com/send?phone=201000970911">
+           <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+  </div> 
+  <!------------------- contact-be whats app ------------------->     
+  <div class="container">
+    <div class="card m-4 border-0">
+      <div class="row g-0">
+        <div class="col-md-6 text-center">
+          <img src="{{pro.photo.url}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-6 pro-in">
+          <div class="card-body">
+            <h5 class="card-title">{{pro.name}}</h5>
+            <p class="card-text">{{pro.description}}</p>
+            {% if pro.price %}
+              <p class="card-text">
+                <span id="price">{{pro.price}}</span>
+              </p>
+              {% else %}
+              <p class="card-text d-none">
+                <span id="price">{{pro.price}}</span>
+              </p>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
